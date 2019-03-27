@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.slider {
+  width: 9999px;
+  height: 100%;
+}
+
+.slider__item {
+  display: inline-block;
+}
+
+.slider__item img {
+  height: 99vh;
+}
