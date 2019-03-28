@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2 блока</title>
+  
+  <style>
+    
+    .container {
+      width: 100%;
+    }
+    
+    .parent {
+      position :relative;
+
+      width: 200px;
+      height: 200px;
+      
+      margin: auto;
+      margin-bottom: 10px;
+      
+      background-color:#FFD700;
+    }
+
+    .parent::before {
+      position: absolute;
+      content: attr(data-name);
+      right: 10px;
+    }
+    
+    .child {
+      width: 100px;
+      height: 100px;
+      
+      background-color:#3E13AF;
+    }
+    
+    /*******************************/
+    
+    .flex {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .flex .child {
+      margin: auto;
+    }
+    
+    /********************************/
+    
+    .translate .child{
+      transform: translate(50%, 50%);
+    }
+    
+    /********************************/
+    
+    .relative .child {
+      position: relative;
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <main class="container">
+    <section class="parent flex">
+      <div class="child"></div>
+    </section>
+    
+    <section class="parent translate">
+      <div class="child"></div>
+    </section>
+    
+    <section class="parent relative">
+      <div class="child"></div>
+    </section>
+    
+    <section class="parent js" data-name="js">
+      <div class="child"></div>
+    </section>
+  </main>
+
+  <script>
+  
+    'use strict';
+
+    (function () {
+      var parent = document.querySelector('.js');
+      var child = parent.querySelector('.child');
+      
+      parent.style.position = 'relative';
+      child.style.position = 'absolute';
+
+      child.style.top = (parent.clientHeight - child.clientHeight)/2 + 'px';
+      child.style.left = (parent.clientWidth - child.clientWidth)/2 + 'px';
+    })();
+
+  </script>
+  
+</body>
+</html>
