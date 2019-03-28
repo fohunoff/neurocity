@@ -68,7 +68,6 @@
     };
 
     xhr.addEventListener('readystatechange', readyStateHandler);
-
     xhr.open(method, url);
     xhr.send(data);
   }
