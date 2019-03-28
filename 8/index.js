@@ -10,7 +10,7 @@
     plant: 'img/plant.png',
     tickets: 'img/tickets.png',
     robot: 'img/robot.png',
-    duck: 'img/ducking.png',
+    duck: 'img/duckling.png',
     sword: 'img/sword.png',
   };
 
